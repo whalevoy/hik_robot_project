@@ -17,9 +17,9 @@ def callback(msg):
     orientation = msg.goal.target_pose.pose.orientation
 
     print(rospy.get_caller_id(), 
-            msg.group, 
-            position.x, position.y, position.z,
-            orientation.x, orientation.y, orientation.z, orientation.w)
+        msg.group, 
+        position.x, position.y, position.z,
+        orientation.x, orientation.y, orientation.z, orientation.w)
 
     my_move_base = actionlib.SimpleActionClient("move_base", MoveBaseAction)
     msg.goal.target_pose.header.frame_id = 'map'
