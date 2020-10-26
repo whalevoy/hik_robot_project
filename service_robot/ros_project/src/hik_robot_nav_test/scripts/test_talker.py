@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import String, Header
 from move_base_msgs.msg import MoveBaseGoal
 from geometry_msgs.msg import PoseStamped
-from hik_robot_nav.msg import HikRobotSetTaskMsg
+from hik_robot_nav_test.msg import HikRobotSetTaskMsg
 
 def talker():
     pub = rospy.Publisher('HiRobotSetTaskMsg', HikRobotSetTaskMsg, queue_size=10)

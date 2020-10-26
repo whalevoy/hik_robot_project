@@ -4,7 +4,7 @@ import rospy
 import move_base
 import actionlib
 from std_msgs.msg import String 
-from hik_robot_nav.msg import HikRobotSetTaskMsg
+from hik_robot_nav_test.msg import HikRobotSetTaskMsg
 from geometry_msgs.msg import PoseStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from smach_ros import SimpleActionState  
