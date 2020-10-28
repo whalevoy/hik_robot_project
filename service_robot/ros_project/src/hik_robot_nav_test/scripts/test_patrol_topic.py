@@ -26,7 +26,7 @@ def talker():
     #while not rospy.is_shutdown():
     hello_str = "req group %d" % count
     rospy.loginfo(hello_str)
-    pub.publish(HikRobotSetTaskMsg(count,2,3,4,5,robot_goal))
+    pub.publish(HikRobotSetTaskMsg(2,3,3,4,5,robot_goal))
     count = count + 1
     rate.sleep()
 

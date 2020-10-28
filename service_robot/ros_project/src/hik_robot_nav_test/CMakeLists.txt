@@ -20,10 +20,12 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
     DIRECTORY msg 
     FILES HikRobotSetTaskMsg.msg
+    FILES HikRobotSetModules.msg
 )
 
 add_service_files( 
     DIRECTORY srv 
+    FILES HikRobotSetTaskSrv.srv
     FILES HikRobotSetTaskSrv.srv
 )
     
@@ -41,10 +43,11 @@ catkin_package(CATKIN_DEPENDS
 
 
 catkin_install_python(PROGRAMS 
-    scripts/test_client.py
-    scripts/test_talker.py
     scripts/hik_robot_main_topic.py
     scripts/hik_robot_main_service.py
+    scripts/test_service.py
+    scripts/test_patrol_topic.py
+    scripts/test_follow_topic.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
