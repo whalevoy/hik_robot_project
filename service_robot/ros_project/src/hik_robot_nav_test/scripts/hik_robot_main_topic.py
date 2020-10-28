@@ -30,7 +30,7 @@ def follow_task(msg):
         pub.publish(HikRobotSetModules(0,0,1))
 
 
-def callback(msg):
+def set_task_callback(msg):
     group = msg.group
 
     position = msg.goal.target_pose.pose.position
@@ -49,13 +49,13 @@ def callback(msg):
             follow_task(msg)
 
         else:
-            print "inviled param"
+            print "inviled msg"
 
 
 def listener():
     rospy.init_node('hik_robot_test', anonymous=True)
-    rospy.Subscriber("HiRobotSetTaskMsg", HikRobotSetTaskMsg, callback)
-    print('hik robot task topic is ready to get req.')
+    rospy.Subscriber("HiRobotSetTaskMsg", HikRobotSetTaskMsg, set_task_callback)
+    print('hik robot task Subscriber is ready to get req.')
     rospy.spin()
 
 if __name__ == '__main__':
